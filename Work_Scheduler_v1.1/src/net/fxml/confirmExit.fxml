@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0" style="-fx-border-color: black; -fx-border-width: 0.1em;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.controllers.ConfirmExitController">
+    <top>
+        <AnchorPane prefHeight="30.0" prefWidth="400.0" style="-fx-background-color: #AEAEAE;" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fx:id="exitButton" fitHeight="49.0" fitWidth="24.0" layoutX="362.0" layoutY="2.0" onMouseClicked="#handleExitButton" onMouseEntered="#handleHoverButtonEnter" onMouseExited="#handleHoverButtonExit" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="3.0">
+                    <image>
+                        <Image url="@../../../../../../../Desktop/Java IntelliJ Projects/TestWork/src/main/java/net/images/Close.png" />
+                    </image>
+                </ImageView>
+                <Label layoutX="37.0" layoutY="5.0" text="ERROR!" textFill="#092c4c" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0">
+                    <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="43.0" fitWidth="24.0" layoutX="2.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="3.0">
+                    <image>
+                        <Image url="@../../../../../../../Desktop/Java IntelliJ Projects/TestWork/src/main/java/net/images/Logo.png" />
+                    </image>
+                </ImageView>
+            </children>
+            <effect>
+                <DropShadow />
+            </effect>
+        </AnchorPane>
+    </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+              <Label alignment="CENTER" prefHeight="82.0" prefWidth="398.0" text="Are you sure you want to exit? All unsaved data will be lost." textAlignment="CENTER" wrapText="true" AnchorPane.topAnchor="10.0">
+                  <font>
+                      <Font name="System Bold Italic" size="18.0" />
+                  </font>
+              </Label>
+            <JFXButton fx:id="jfxExitButton" layoutX="99.0" layoutY="103.0" onAction="#handlejfxExitButton" onMouseEntered="#handleHoverButtonEnter" onMouseExited="#handleHoverButtonExit" prefHeight="31.0" prefWidth="94.0" style="-fx-background-color: #092C4C; -fx-border-color: black; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Exit" textFill="WHITE" AnchorPane.leftAnchor="99.0">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="jfxCancelButton" layoutX="205.0" layoutY="103.0" onAction="#handlejfxCancelButton" onMouseEntered="#handleHoverButtonEnter" onMouseExited="#handleHoverButtonExit" prefHeight="31.0" prefWidth="94.0" style="-fx-background-color: #092C4C; -fx-border-color: black; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Cancel" textFill="WHITE" AnchorPane.rightAnchor="99.0">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

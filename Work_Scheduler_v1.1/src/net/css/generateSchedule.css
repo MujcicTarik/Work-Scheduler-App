@@ -1,0 +1,32 @@
+
+* {
+	-fx-primary-color: #092C4C;
+	-fx-secondary-color: #AEAEAE;
+	-fx-light-grey-color: #d1d1d1;
+
+	-fx-focus-color: -fx-secondary-color;
+}
+
+.date-picker:editable .arrow-button .arrow {
+    -fx-background-color: -fx-primary-color;
+}
+
+.date-picker:editable .selected {
+    -fx-background-color: -fx-primary-color;
+    -fx-text-fill: white;
+}
+
+.date-picker .selected:focused {
+	-fx-background-color: -fx-primary-color;
+	-fx-text-fill: white;
+}
+
+.date-picker-popup .month-year-pane {
+	-fx-background-color: -fx-primary-color;
+	-fx-text-fill: white;
+}
+
+.date-picker-popup .month-year-pane .label {
+	-fx-text-fill: white;
+}
+

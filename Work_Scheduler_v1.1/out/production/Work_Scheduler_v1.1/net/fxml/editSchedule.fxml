@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#refreshWindow" prefHeight="630.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.controllers.EditScheduleController">
+   <children>
+      <Label layoutX="36.0" layoutY="58.0" text="Select a schedule for editing">
+         <font>
+            <Font name="System Italic" size="24.0" />
+         </font>
+      </Label>
+      <JFXListView fx:id="schedulesList" layoutX="349.0" layoutY="14.0" prefHeight="123.0" prefWidth="300.0" style="-fx-border-color: black; -fx-border-width: .5px;" stylesheets="@css/scrollbars.css" AnchorPane.leftAnchor="349.0" AnchorPane.rightAnchor="251.0" />
+      <JFXButton fx:id="editButton" focusTraversable="false" layoutX="691.0" layoutY="28.0" onAction="#handleEdit" onMouseEntered="#handleHoverButtonEnter" onMouseExited="#handleHoverButtonExit" prefHeight="30.0" prefWidth="92.0" style="-fx-background-color: #092C4C; -fx-border-color: black; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Edit" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </JFXButton>
+      <TextField fx:id="scheduleName" layoutX="349.0" layoutY="158.0" prefHeight="46.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-border-color: #092C4C;">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
+      <Label layoutX="108.0" layoutY="166.0" text="Name of the schedule ">
+         <font>
+            <Font name="System Italic" size="20.0" />
+         </font>
+      </Label>
+      <JFXListView fx:id="shiftList" layoutX="80.0" layoutY="278.0" prefHeight="267.0" prefWidth="300.0" stylesheets="@css/scrollbars.css" />
+      <JFXListView fx:id="workersList" layoutX="530.0" layoutY="278.0" prefHeight="267.0" prefWidth="300.0" stylesheets="@css/scrollbars.css" />
+      <JFXButton fx:id="buttonSave" layoutX="680.0" layoutY="558.0" onAction="#handleSave" onMouseEntered="#handleHoverButtonEnter" onMouseExited="#handleHoverButtonExit" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #092C4C; -fx-border-color: black; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Save" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="buttonNewShift" layoutX="155.0" layoutY="223.0" onAction="#handleNewShift" onMouseEntered="#handleHoverButtonEnter" onMouseExited="#handleHoverButtonExit" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #092C4C; -fx-border-color: black; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="New Shift" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="buttonNewWorker" layoutX="605.0" layoutY="223.0" onAction="#handleNewWorker" onMouseEntered="#handleHoverButtonEnter" onMouseExited="#handleHoverButtonExit" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #092C4C; -fx-border-color: black; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="New Worker" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="deleteButton" focusTraversable="false" layoutX="691.0" layoutY="86.0" onAction="#handleDelete" onMouseEntered="#handleHoverButtonEnter" onMouseExited="#handleHoverButtonExit" prefHeight="41.0" prefWidth="92.0" style="-fx-background-color: #092C4C; -fx-border-color: black; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

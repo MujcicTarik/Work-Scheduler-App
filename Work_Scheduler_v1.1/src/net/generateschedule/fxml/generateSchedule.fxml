@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#refreshWindow" prefHeight="630.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.generateschedule.controllers.GenerateScheduleController">
+    <children>
+        <Label layoutX="54.0" layoutY="62.0" prefHeight="89.0" prefWidth="269.0" text="Select a schedule you want to generate:" textAlignment="CENTER" wrapText="true">
+            <font>
+                <Font name="System Italic" size="20.0" />
+            </font>
+        </Label>
+        <JFXListView fx:id="schedulesList" layoutX="353.0" layoutY="36.0" prefHeight="142.0" prefWidth="300.0" style="-fx-border-color: black; -fx-border-width: .5px;" stylesheets="@css/scrollbars.css" AnchorPane.leftAnchor="353.0" AnchorPane.rightAnchor="247.0" />
+        <JFXButton fx:id="selectButton" focusTraversable="false" layoutX="693.0" layoutY="86.0" onAction="#handleSelect" onMouseEntered="#handleHoverButtonEnter" onMouseExited="#handleHoverButtonExit" prefHeight="41.0" prefWidth="167.0" style="-fx-background-color: #092C4C; -fx-border-color: black; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Select" textFill="WHITE">
+            <font>
+                <Font name="System Bold Italic" size="18.0" />
+            </font>
+        </JFXButton>
+      <AnchorPane fx:id="configureGenerationPane" layoutX="42.0" layoutY="292.0" prefHeight="437.0" prefWidth="820.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0">
+         <children>
+            <Label layoutX="22.0" layoutY="7.0" prefHeight="34.0" prefWidth="167.0" text="Select night shift" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="selectedNightShiftComboBox" layoutX="306.0" layoutY="12.0" prefHeight="25.0" prefWidth="147.0" stylesheets="@css/dropDown.css" />
+            <Group layoutX="22.0" layoutY="41.0">
+               <children>
+                  <Label layoutY="28.0" prefHeight="34.0" prefWidth="291.0" text="How many workers on Saturday" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="numOfWorkersSaturday" layoutX="290.0" layoutY="32.0" prefHeight="25.0" prefWidth="50.0" />
+                  <Label layoutY="55.0" prefHeight="34.0" prefWidth="291.0" text="How many workers on Sunday" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="numOfWorkersSunday" layoutX="290.0" layoutY="60.0" prefHeight="25.0" prefWidth="50.0" />
+                  <Label prefHeight="34.0" prefWidth="291.0" text="How many workers in night shift" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="System Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="numOfWorkersNightShift" layoutX="290.0" layoutY="4.0" prefHeight="25.0" prefWidth="50.0" />
+               </children>
+            </Group>
+            <Label layoutX="22.0" layoutY="131.0" prefHeight="34.0" prefWidth="291.0" text="Select start date (Monday)" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="System Italic" size="20.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="startDatePicker" layoutX="306.0" layoutY="135.0" prefHeight="25.0" prefWidth="147.0" stylesheets="@css/generateSchedule.css" />
+            <JFXButton fx:id="generateButton" focusTraversable="false" layoutX="600.0" layoutY="361.0" onAction="#handleGenerate" onMouseEntered="#handleHoverButtonEnter" onMouseExited="#handleHoverButtonExit" prefHeight="41.0" prefWidth="167.0" style="-fx-background-color: #092C4C; -fx-border-color: black; -fx-background-radius: 2em; -fx-border-radius: 2em;" text="Generate" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXListView fx:id="sheetsList" layoutX="583.0" layoutY="14.0" prefHeight="222.0" prefWidth="200.0" />
+            <JFXListView fx:id="selectNumOfWorkersJFXListView" layoutX="22.0" layoutY="204.0" prefHeight="198.0" prefWidth="437.0" />
+            <Label layoutX="22.0" layoutY="180.0" prefHeight="34.0" prefWidth="437.0" text="Please select how many workers do you want in each shift:" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="System Italic" size="17.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </Label>
+            <Label layoutX="22.0" layoutY="402.0" text="Total number of workers available: " textFill="#5e5e5e">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+               <padding>
+                  <Insets top="7.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="totalNumOfWorkersTextField" layoutX="241.0" layoutY="411.0" prefHeight="25.0" prefWidth="50.0" AnchorPane.bottomAnchor="5.0" />
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>
